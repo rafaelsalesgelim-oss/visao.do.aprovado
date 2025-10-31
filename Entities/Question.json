@@ -1,0 +1,75 @@
+{
+  "name": "Question",
+  "type": "object",
+  "properties": {
+    "discipline": {
+      "type": "string",
+      "description": "Disciplina da questão"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Assunto específico"
+    },
+    "questionType": {
+      "type": "string",
+      "enum": [
+        "Certo/Errado",
+        "Múltipla Escolha"
+      ],
+      "description": "Tipo da questão: Certo/Errado ou Múltipla Escolha"
+    },
+    "questionText": {
+      "type": "string",
+      "description": "Texto completo da questão"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Opções de resposta (2 para Certo/Errado, 5 para Múltipla Escolha)"
+    },
+    "correctAnswer": {
+      "type": "integer",
+      "description": "Índice da resposta correta (0-1 para Certo/Errado, 0-4 para Múltipla Escolha)"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "fácil",
+        "médio",
+        "difícil"
+      ],
+      "description": "Nível de dificuldade"
+    },
+    "source": {
+      "type": "string",
+      "description": "Fonte da questão (banca, prova)"
+    },
+    "year": {
+      "type": "integer",
+      "description": "Ano da prova"
+    },
+    "institution": {
+      "type": "string",
+      "description": "Instituição/órgão"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativa",
+        "revisão",
+        "inativa"
+      ],
+      "default": "ativa",
+      "description": "Status da questão"
+    }
+  },
+  "required": [
+    "discipline",
+    "questionText",
+    "options",
+    "correctAnswer",
+    "questionType"
+  ]
+}

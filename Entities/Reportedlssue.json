@@ -1,0 +1,43 @@
+{
+  "name": "ReportedIssue",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "ID do usuário que reportou"
+    },
+    "userEmail": {
+      "type": "string",
+      "description": "Email do usuário"
+    },
+    "questionId": {
+      "type": "string",
+      "description": "ID da questão com problema"
+    },
+    "issueText": {
+      "type": "string",
+      "description": "Descrição do problema"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "analisado",
+        "resolvido",
+        "rejeitado"
+      ],
+      "default": "pendente",
+      "description": "Status da análise"
+    },
+    "adminResponse": {
+      "type": "string",
+      "description": "Resposta do administrador"
+    }
+  },
+  "required": [
+    "userId",
+    "userEmail",
+    "questionId",
+    "issueText"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "name": "Redacao",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "ID do usuário"
+    },
+    "userEmail": {
+      "type": "string",
+      "description": "Email do usuário"
+    },
+    "tema": {
+      "type": "string",
+      "description": "Tema da redação"
+    },
+    "tipoProva": {
+      "type": "string",
+      "description": "Tipo de prova (ENEM, CESPE, etc)"
+    },
+    "anoProva": {
+      "type": "integer",
+      "description": "Ano da prova"
+    },
+    "texto": {
+      "type": "string",
+      "description": "Texto completo da redação"
+    },
+    "temaFileUrl": {
+      "type": "string",
+      "description": "URL do arquivo do tema"
+    },
+    "notaFinal": {
+      "type": "integer",
+      "description": "Nota final (soma das 5 competências)"
+    },
+    "competencias": {
+      "type": "object",
+      "properties": {
+        "competencia1": {
+          "type": "object",
+          "properties": {
+            "nota": {
+              "type": "integer"
+            },
+            "feedback": {
+              "type": "string"
+            }
+          }
+        },
+        "competencia2": {
+          "type": "object",
+          "properties": {
+            "nota": {
+              "type": "integer"
+            },
+            "feedback": {
+              "type": "string"
+            }
+          }
+        },
+        "competencia3": {
+          "type": "object",
+          "properties": {
+            "nota": {
+              "type": "integer"
+            },
+            "feedback": {
+              "type": "string"
+            }
+          }
+        },
+        "competencia4": {
+          "type": "object",
+          "properties": {
+            "nota": {
+              "type": "integer"
+            },
+            "feedback": {
+              "type": "string"
+            }
+          }
+        },
+        "competencia5": {
+          "type": "object",
+          "properties": {
+            "nota": {
+              "type": "integer"
+            },
+            "feedback": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "pontosFortes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Lista de pontos fortes identificados"
+    },
+    "pontosMelhorar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Lista de pontos a melhorar"
+    }
+  },
+  "required": [
+    "userId",
+    "tema",
+    "texto"
+  ]
+}

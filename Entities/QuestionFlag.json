@@ -1,0 +1,27 @@
+{
+  "name": "QuestionFlag",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "ID do usuário"
+    },
+    "questionId": {
+      "type": "string",
+      "description": "ID da questão"
+    },
+    "isFlagged": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se está marcada para revisão"
+    },
+    "personalNote": {
+      "type": "string",
+      "description": "Nota pessoal do usuário"
+    }
+  },
+  "required": [
+    "userId",
+    "questionId"
+  ]
+}

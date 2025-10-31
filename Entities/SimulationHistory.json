@@ -1,0 +1,55 @@
+{
+  "name": "SimulationHistory",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "ID do usuário"
+    },
+    "userEmail": {
+      "type": "string",
+      "description": "Email do usuário"
+    },
+    "questionIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs das questões do simulado"
+    },
+    "answers": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Respostas dadas (índices 0-4 ou -1 para não respondida)"
+    },
+    "correctCount": {
+      "type": "integer",
+      "description": "Número de acertos"
+    },
+    "totalCount": {
+      "type": "integer",
+      "description": "Total de questões"
+    },
+    "timeSpent": {
+      "type": "integer",
+      "description": "Tempo gasto em segundos"
+    },
+    "disciplines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Disciplinas do simulado"
+    }
+  },
+  "required": [
+    "userId",
+    "userEmail",
+    "questionIds",
+    "answers",
+    "correctCount",
+    "totalCount"
+  ]
+}

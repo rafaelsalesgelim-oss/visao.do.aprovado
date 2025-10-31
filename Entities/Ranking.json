@@ -1,0 +1,149 @@
+{
+  "name": "Ranking",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Título do ranking"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do ranking"
+    },
+    "creatorId": {
+      "type": "string",
+      "description": "ID do criador"
+    },
+    "creatorName": {
+      "type": "string",
+      "description": "Nome do criador"
+    },
+    "minOverallScore": {
+      "type": "number",
+      "description": "Pontuação mínima total para não eliminação"
+    },
+    "concurrency": {
+      "type": "object",
+      "description": "Dados de vagas e concorrência por categoria",
+      "properties": {
+        "Ampla": {
+          "type": "object",
+          "properties": {
+            "vagas": {
+              "type": "integer"
+            },
+            "concorrentes": {
+              "type": "integer"
+            }
+          }
+        },
+        "PP": {
+          "type": "object",
+          "properties": {
+            "vagas": {
+              "type": "integer"
+            },
+            "concorrentes": {
+              "type": "integer"
+            }
+          }
+        },
+        "PcD": {
+          "type": "object",
+          "properties": {
+            "vagas": {
+              "type": "integer"
+            },
+            "concorrentes": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "subjects": {
+      "type": "object",
+      "description": "Disciplinas e configurações (chave é o slug da disciplina)",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "minScore": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "gabarito": {
+      "type": "object",
+      "description": "Gabarito por disciplina (chave é o slug da disciplina, valor é array de respostas)",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "gabaritoTipo": {
+      "type": "string",
+      "description": "Tipo do gabarito (Preliminar ou Oficial)"
+    },
+    "gabaritoVersao": {
+      "type": "string",
+      "description": "Versão do gabarito"
+    },
+    "totalQuestions": {
+      "type": "integer",
+      "description": "Número total de questões"
+    },
+    "rankingData": {
+      "type": "array",
+      "description": "Dados dos participantes do ranking",
+      "items": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "userEmail": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "final_score": {
+            "type": "number"
+          },
+          "eliminado": {
+            "type": "boolean"
+          }
+        }
+      },
+      "default": []
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aberto",
+        "encerrado"
+      ],
+      "default": "aberto"
+    }
+  },
+  "required": [
+    "title",
+    "creatorId",
+    "totalQuestions"
+  ]
+}
